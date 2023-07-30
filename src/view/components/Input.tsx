@@ -1,15 +1,15 @@
-import { ComponentProps } from "react";
+import { ComponentProps, forwardRef } from "react";
 
 interface InputProps extends ComponentProps<'input'> {
     name: string,
 }
 
-export function Input ({name, placeholder, id, ...props}: InputProps) {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({name, placeholder, id, ...props}, ref) => {
     const InputId = id ?? name;
     
     return (
         <div className="relative">
-            <input name={name} id={InputId} {...props} className="w-full bg-white rounded-lg border border-gray-500 px-3 h-[52px] text-gray-800 outline-none focus:border-gray-800 transition-all pt-4 placeholder-shown:pt-0 peer"
+            <input name={name} id={InputId} {...props} ref={ref} className="w-full bg-white rounded-lg border border-gray-500 px-3 h-[52px] text-gray-800 outline-none focus:border-gray-800 transition-all pt-4 placeholder-shown:pt-0 peer"
             placeholder=" "/>
 
             <label 
@@ -21,4 +21,4 @@ export function Input ({name, placeholder, id, ...props}: InputProps) {
             </label>
         </div>
     );
-}
+})
