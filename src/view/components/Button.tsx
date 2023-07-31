@@ -1,9 +1,10 @@
 import { ComponentProps } from "react";
+import { cn } from "../../app/utils/cn";
 
 interface ButtonProps extends ComponentProps<'button'> {}
 
-export function Button(props: ButtonProps) {
+export function Button({ className,...props}: ButtonProps) {
     return (
-        <button {...props} className="font-medium text-white tracking-[-0.5px] bg-teal-900 rounded-2xl h-12 px-6 mt-2 hover:bg-teal-800 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed transition-all active:bg-emerald-900" type="submit"></button>
+        <button {...props} className={cn('font-medium text-white tracking-[-0.5px] bg-teal-900 rounded-2xl h-12 px-6 mt-2 hover:bg-teal-800 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed transition-all active:bg-emerald-900', className,)} type="submit"></button>
     );
 }
