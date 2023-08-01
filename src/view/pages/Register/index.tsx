@@ -4,7 +4,7 @@ import { Button } from "../../components/Button";
 import { useRegisterController } from "./useRegisterController";
 
 export function Register() {
-    const { register, errors, handleSubmit } = useRegisterController();
+    const { register, errors, handleSubmit, isLoading } = useRegisterController();
     
     return (
         <>
@@ -21,7 +21,7 @@ export function Register() {
                 <Input error={errors.name?.message} {...register('name')} placeholder="Nome"/>
                 <Input error={errors.email?.message} {...register('email')} type="email" placeholder="E-mail"/>
                 <Input  error={errors.password?.message} {...register('password')} type="password" placeholder="Senha"/>
-                <Button type="submit">Criar conta</Button>
+                <Button isLoading={isLoading} type="submit">Criar conta</Button>
             </form>
         </>
     );
