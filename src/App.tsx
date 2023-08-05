@@ -18,7 +18,7 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <Router />
-
+        
         <Toaster/>
       </AuthProvider>
       <ReactQueryDevtools/>
