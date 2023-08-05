@@ -5,7 +5,6 @@ import { authService } from '../../../app/services/authService';
 import { useMutation } from '@tanstack/react-query';
 import { SigninParams } from '../../../app/services/authService/signin';
 import { toast } from 'react-hot-toast';
-import { sleep } from '../../../app/utils/sleep';
 import { useAuth } from '../../../app/hooks/useAuth';
 
 

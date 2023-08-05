@@ -1,4 +1,3 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { EyeIcon } from "../../../components/icons/EyeIcon";
 import { AccountCard } from "./AccountCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
