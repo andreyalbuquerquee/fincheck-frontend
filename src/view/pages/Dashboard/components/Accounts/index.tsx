@@ -2,7 +2,7 @@ import { EyeIcon } from "../../../../components/icons/EyeIcon";
 import { AccountCard } from "./AccountCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { AccountSliderNavigation } from "./AccountsSliderNavigation";
+import { AccountSliderNavigation } from "./SliderNavigation";
 import { useAccountsController } from "./useAccountsController";
 
 
