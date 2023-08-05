@@ -24,7 +24,7 @@ export function Accounts() {
                     </div>
                 </div>
                 <div className="mt-4">
-                    <AccountCard color="#7950F2" name="Nubank" balance={1000}/>
+                    <AccountCard color="#7950F2" name="Nubank" balance={1000} type="INVESTMENT"/>
                 </div>
             </div>
         </div>
