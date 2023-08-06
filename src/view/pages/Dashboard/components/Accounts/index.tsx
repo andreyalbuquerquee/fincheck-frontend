@@ -35,7 +35,7 @@ export function Accounts() {
                         !areValuesVisible && 'blur-[10px]'
                     )}>R$ 1.000,00</strong>
                     <button onClick={toggleValuesVisibility} className="w-8 h-8 flex items-center justify-center">
-                        <EyeIcon open={!areValuesVisible}/>
+                        <EyeIcon open={areValuesVisible}/>
                     </button>
                 </div>
             </div>
