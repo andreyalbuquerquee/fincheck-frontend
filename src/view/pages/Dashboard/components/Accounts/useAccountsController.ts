@@ -12,5 +12,10 @@ export function useAccountsController() {
         isEnd: false,
     });
 
-    return { sliderState, setSliderState, windowWidth, areValuesVisible, toggleValuesVisibility };
+    return { sliderState, 
+        setSliderState, 
+        windowWidth, 
+        areValuesVisible, 
+        toggleValuesVisibility,
+        isLoading: false, };
 }

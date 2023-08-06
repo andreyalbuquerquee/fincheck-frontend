@@ -5,15 +5,29 @@ import 'swiper/css';
 import { AccountSliderNavigation } from "./SliderNavigation";
 import { useAccountsController } from "./useAccountsController";
 import { cn } from "../../../../../app/utils/cn";
+import { Spinner } from "../../../../components/Spinner";
 
 
 
 export function Accounts() {
-    const { sliderState, setSliderState, windowWidth, areValuesVisible, toggleValuesVisibility } = useAccountsController();
+    const { sliderState, 
+        setSliderState, 
+        windowWidth, 
+        areValuesVisible, 
+        toggleValuesVisibility, 
+        isLoading } = useAccountsController();
     
     return (
         <div className="bg-teal-900 rounded-2xl w-full h-full md:p-10 px-4 py-8 flex flex-col">
-            <div>
+            {isLoading && (
+            <div className="h-full w-full flex items-center justify-center">
+            <Spinner className="text-teal-950/50 fill-white w-10 h-10"/>
+            </div>
+            )}
+            
+            {!isLoading && (
+                <>
+                <div>
                 <span className="tracking-[-0.5px] text-white block">Saldo total</span>
                 <div className="flex items-center gap-2">
                     <strong className={cn(
@@ -54,6 +68,8 @@ export function Accounts() {
                 </Swiper> 
             </div>
             </div>
+            </>
+            )}
         </div>
     )
 }

@@ -7,15 +7,24 @@ import { SliderOption } from "./SliderOption";
 import { SliderNavigation } from "./SliderNavigation";
 import { formatCurrency } from "../../../../../app/utils/formatCurrency";
 import { CategoryIcon } from "../../../../components/icons/categories/CategoryIcon";
-import { useDashboard } from "../DashboardContext/useDashboard";
 import { cn } from "../../../../../app/utils/cn";
+import { useTransactionsController } from "./useTransactionsController";
+import { Spinner } from "../../../../components/Spinner";
 
 export function Transactions() {
-    const { areValuesVisible } = useDashboard();
+    const { areValuesVisible, isLoading } = useTransactionsController();
     
     return (
         <div className="bg-gray-100 rounded-2xl w-full h-full p-10 flex flex-col">
-            <header>
+            {isLoading && (
+                <div className="h-full w-full flex items-center justify-center">
+                    <Spinner className="h-10 w-10"/>
+                </div>
+            )}
+
+            {!isLoading && (
+                <>
+                <header>
                 <div className="flex items-center justify-between">
                     <button className="flex items-center gap-2">
                         <TransactionsIcon />
@@ -74,9 +83,10 @@ export function Transactions() {
                         'text-red-800 tracking-[-0.5px] font-medium',
                         !areValuesVisible && 'blur-sm'
                     )}>- {formatCurrency(50)}</span>
-                </div>
-                
+                </div>  
             </div>
+            </>
+            )}
         </div>
     )
 }
