@@ -12,7 +12,7 @@ export function Fab() {
                     <PlusIcon className="w-6 h-6"/>
                 </button>
                 </DropdownMenu.Trigger>
-                <DropdownMenu.Content className="mb-4 mr-4">
+                <DropdownMenu.Content>
                 
                 <DropdownMenu.Item className="gap-2">
                     <CategoryIcon type="expense"/>
