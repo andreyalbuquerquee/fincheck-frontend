@@ -17,15 +17,15 @@ export function TransactionTypeDropdown() {
 
             <DropdownMenu.Content className="w-[279px]">
                 <DropdownMenu.Item className="gap-2">
-                    <IncomeIcon/>
+                    <IncomeIcon color="#2B8A3E"/>
                     Receitas
                 </DropdownMenu.Item>
                 <DropdownMenu.Item className="gap-2">
-                    <ExpensesIcon/>
+                    <ExpensesIcon color="#C92A2A"/>
                     Despesas
                 </DropdownMenu.Item>
                 <DropdownMenu.Item className="gap-2">
-                    <TransactionsIcon/>
+                    <TransactionsIcon color="#364FC7"/>
                     Transações
                 </DropdownMenu.Item>
             </DropdownMenu.Content>
