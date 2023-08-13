@@ -17,7 +17,8 @@ export function Accounts() {
         areValuesVisible, 
         toggleValuesVisibility, 
         isLoading,
-        accounts } = useAccountsController();
+        accounts,
+        openNewAccountModal, } = useAccountsController();
     
     return (
         <div className="bg-teal-900 rounded-2xl w-full h-full md:p-10 px-4 py-8 flex flex-col">
@@ -49,7 +50,7 @@ export function Accounts() {
                     <strong className="text-white tracking-[-1px] text-lg font-bold">Minhas contas</strong>
                 </div>
 
-                <button className="flex flex-col items-center justify-center gap-4 mt-4 h-52 border-2 border-dashed border-teal-600 rounded-2xl text-white hover:bg-teal-800 transition-colors">
+                <button onClick={openNewAccountModal} className="flex flex-col items-center justify-center gap-4 mt-4 h-52 border-2 border-dashed border-teal-600 rounded-2xl text-white hover:bg-teal-800 transition-colors">
                     <div className="h-11 w-11 border-2 border-dashed border-white rounded-full flex items-center justify-center">
                     <PlusIcon className="w-6 h-6"/>
                     </div>
