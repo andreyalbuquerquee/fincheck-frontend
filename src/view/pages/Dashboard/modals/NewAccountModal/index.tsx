@@ -1,3 +1,4 @@
+import { ColorsDropdownInput } from "../../../../components/ColorsDropdownInput";
 import { Input } from "../../../../components/Input";
 import { InputCurrency } from "../../../../components/InputCurrency";
 import { Modal } from "../../../../components/Modal";
@@ -25,6 +26,8 @@ export function NewAccountModal() {
                         {value: 'CHECKING', label: 'Conta Corrente',},
                         {value: 'CASH', label: 'Dinheiro Físico',},
                         ]} placeholder="Tipo"/>
+
+                    <ColorsDropdownInput/>
                 </div>
             </form>
         </Modal>

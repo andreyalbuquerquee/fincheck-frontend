@@ -81,7 +81,7 @@ export function Select({ className, error, options, placeholder }: SelectProps) 
   
   {error && (
                 <div className="flex flex-row gap-2 items-center mt-2 text-red-900">
-                    <CrossCircledIcon className=""/>
+                    <CrossCircledIcon />
                     <span className=" text-xs">{error}</span>
                 </div>
             )}
