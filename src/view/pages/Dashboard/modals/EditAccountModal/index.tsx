@@ -5,11 +5,11 @@ import { Input } from "../../../../components/Input";
 import { InputCurrency } from "../../../../components/InputCurrency";
 import { Modal } from "../../../../components/Modal";
 import { Select } from "../../../../components/Select";
-import { useNewAccountModalController } from "./useEditAccountModalController";
+import { useEditAccountModalController } from "./useEditAccountModalController";
 
 
 export function EditAccountModal() {
-    const { isEditAccountModalOpen, closeEditAccountModal, errors, handleSubmit, register, control, isLoading } = useNewAccountModalController();
+    const { isEditAccountModalOpen, closeEditAccountModal, errors, handleSubmit, register, control, isLoading } = useEditAccountModalController();
     
     return (
         <Modal title="Editar Conta" open={isEditAccountModalOpen} onClose={closeEditAccountModal}>
@@ -19,7 +19,7 @@ export function EditAccountModal() {
                     <div className="flex items-center gap-2">
                         <span className="text-gray-600 tracking-[-0.5px] text-lg">R$</span>
                         <Controller
-                            defaultValue="0"
+                            defaultValue={0}
                             control={control}
                             name="initialBalance"
                             render={({ field: {onChange, value} }) => (
