@@ -57,5 +57,13 @@ export function useEditAccountModalController() {
         }
     });
 
-    return { isEditAccountModalOpen, closeEditAccountModal, register, errors, handleSubmit, control, isLoading };
+    return { 
+        isEditAccountModalOpen, 
+        closeEditAccountModal, 
+        register, 
+        errors, 
+        handleSubmit, 
+        control, 
+        isLoading, 
+    };
 }
