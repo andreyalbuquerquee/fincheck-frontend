@@ -7,6 +7,7 @@ import { useAccountsController } from "./useAccountsController";
 import { cn } from "../../../../../app/utils/cn";
 import { Spinner } from "../../../../components/Spinner";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { formatCurrency } from "../../../../../app/utils/formatCurrency";
 
 
 
@@ -18,7 +19,8 @@ export function Accounts() {
         toggleValuesVisibility, 
         isLoading,
         accounts,
-        openNewAccountModal, } = useAccountsController();
+        openNewAccountModal,
+        currentBalance, } = useAccountsController();
     
     return (
         <div className="bg-teal-900 rounded-2xl w-full h-full md:p-10 px-4 py-8 flex flex-col">
@@ -36,7 +38,9 @@ export function Accounts() {
                     <strong className={cn(
                         "text-2xl tracking-[-1px] text-white",
                         !areValuesVisible && 'blur-[10px]'
-                    )}>R$ 1.000,00</strong>
+                    )}>
+                        {formatCurrency(currentBalance)}
+                        </strong>
                     <button onClick={toggleValuesVisibility} className="w-8 h-8 flex items-center justify-center">
                         <EyeIcon open={areValuesVisible}/>
                     </button>
@@ -76,10 +80,7 @@ export function Accounts() {
                             {accounts.map(account => (
                                 <SwiperSlide key={account.id}>
                                     <AccountCard 
-                                    color={account.color} 
-                                    name={account.name} 
-                                    balance={account.currentBalance}
-                                    type={account.type}/>
+                                    data={account}/>
                                 </SwiperSlide> 
                             ))}
                             
